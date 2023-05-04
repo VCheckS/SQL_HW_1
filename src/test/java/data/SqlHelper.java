@@ -30,6 +30,7 @@ public class SqlHelper {
         }
         return null;
     }
+
     public static DataHelper.VerificationCode getWrongVerificationCode() {
         var codeSQL = "SELECT code FROM auth_codes order by created DESC";
         try (var conn = getConn()) {
@@ -40,6 +41,7 @@ public class SqlHelper {
         }
         return null;
     }
+
     @SneakyThrows
     public static void cleanDataBase() {
         var connection = getConn();
